@@ -1,4 +1,4 @@
-from andrimar_site.extensions import db
+from chalice.extensions import db
 from chalice import init_app
 
 if __name__ == '__main__':

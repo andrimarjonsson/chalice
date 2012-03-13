@@ -1,7 +1,7 @@
-from andrimar_site.extensions import db
+from chalice.extensions import db
 from chalice import init_app
-from andrimar_site.blog.models import Tag, Post
-from andrimar_site.auth.models import User
+from chalice.blog.models import Tag, Post
+from chalice.auth.models import User
 
 if __name__ == '__main__':
     app = init_app()
