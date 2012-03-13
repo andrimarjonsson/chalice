@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block title %}{{ post.title }} | blog{% endblock %}
+{% block body %}
+<h1 class="title">{{ post.title }}</h1>
+<p class=date>written {{ post.create_date|datetimeformat }}</p>
+{{ post.text }}
+<p class=tags>This entry was tagged
+  {% set pipe = joiner(" and ") %}
+  {% for tag in post.tags %} {{ pipe() }}
+  <a href="{{ url_for('blog.show_posts_with_tag', tag=tag.name) }}">{{ tag.name }}</a>
+  {% endfor %}
+</p>
+{% endblock %}
+

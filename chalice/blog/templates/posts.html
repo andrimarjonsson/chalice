@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block title %}blog{% endblock %}
+{% block body %}
+{% for post in posts %}
+<div class=entry-overview>
+  <div class=date>{{ post.create_date|datetimeformat }}</div>
+  <div class=detail>
+    <h1><a href="{{ url_for('blog.show_post', slug=post.slug) }}">{{ post.title }}</a></h1>      
+    <div class=summary>
+      {{ post.text }}
+    </div>
+  </div>
+</div>
+{% else %}
+  No Posts!
+{% endfor %}
+{% endblock %}
