@@ -4,7 +4,7 @@
 <h1>Entries tagged “{{ tag }}”</h1>
   <ul>
 {% for post in posts %}
-<li><a href="{{ url_for('blog.show_post', slug=post.slug) }}">{{ post.title }}</a>, written on {{ post.create_date.strftime('%B %d, %Y') }}</li>
+<li><a href="{{ url_for('blog.show_post', slug=post.slug) }}">{{ post.title }}</a>, written {{ post.create_date|datetimeformat }}</li>
 {% endfor %}
   </ul>
 {% endblock%}

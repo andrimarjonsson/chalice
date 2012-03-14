@@ -2,7 +2,7 @@
 {% block title %}tags{% endblock %}
 {% block body %}
   <h1>Tags</h1>
-  <ul class=tagcloud>
+  <ul class="tagcloud">
     {% for tag in tags %}
     <li><a href="{{ url_for('blog.show_posts_with_tag', tag=tag.name) }}">{{ tag.name }}</a>({{ tag.posts.count() }})</li>
     {% endfor %}
