@@ -66,25 +66,25 @@ div.header
   float:left;
 }
 
-div.navigation
+nav
 {
   float:right;
 }
 
-div.header,div.navigation
+div.header,nav
 {
   height:25px;
   margin-bottom:42px;
 }
 
-div.navigation ul
+nav ul
 {
   margin:0;
   padding:0;
   list-style:none;
 }
 
-div.navigation ul li
+nav ul li
 {
   display:inline;
   margin:0 2px;
@@ -96,7 +96,7 @@ div.body
   clear:both;
 }
 
-div.footer
+footer
 {
   border-top:1px dotted #ddd;
   padding-top:9px;
@@ -106,7 +106,7 @@ div.footer
   text-align:center;
 }
 
-div.footer p
+footer p
 {
   margin:0;
 }

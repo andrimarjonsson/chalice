@@ -1,8 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE HTML>
+<html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
     <title> {% block title %}{% endblock %} | andrimar.is</title>
     <link href="http://fonts.googleapis.com/css?family=Vollkorn&subset=latin" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css" />
@@ -16,27 +15,27 @@
     </script>
   </head>
   <body>
-    <div class=container>
-      <div class=header>
+    <div class="container">
+      <div class="header">
         <a href="/">andrimar.is</a>, a tiny corner of the web.
       </div>
-      <div class=navigation>
+      <nav>
         <ul>
           <li><a href="/">blog</a></li>
           <li><a href="{{ url_for('blog.show_tags') }}">tags</a></li>
           <li><a href="/projects">projects</a></li>
           <li><a href="{{ url_for('pages.about') }}">about</a></li>
         </ul>
-      </div>
-      <div class=body>
+      </nav>
+      <div class="body">
         {% for message in get_flashed_messages() %}
           <div class="flash">{{ message }}</div>
         {% endfor %}
         {% block body %}{% endblock %}
       </div>
-      <div class=footer>
-        <p>
-        &copy; Copyright 2012, <a href="{{ url_for('pages.about') }}">Andri Mar</a>(
+
+      <footer>
+        <p>&copy; Copyright 2012, <a href="{{ url_for('pages.about') }}">Andri Mar</a>(
           <a href="http://twitter.com/andrimarjonsson">twitter</a>,
           <a href="http://github.com/andrimarjonsson">github</a>,
           <a href="http://bitbucket.org/andrimar">bitbucket</a>)
@@ -44,7 +43,8 @@
         <p>
           Content licensed under the Creative Commons attribution-noncommercial-sharealike License.
         </p>
-      </div>
+      </footer>
+
     </div>
   </body>
 </html>
