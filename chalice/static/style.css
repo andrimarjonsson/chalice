@@ -61,7 +61,7 @@ div.container
   padding:0;
 }
 
-div.header
+header
 {
   float:left;
 }
@@ -71,7 +71,7 @@ nav
   float:right;
 }
 
-div.header,nav
+header,nav
 {
   height:25px;
   margin-bottom:42px;
