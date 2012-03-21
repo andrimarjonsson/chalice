@@ -11,3 +11,8 @@ def slugify(text, delim=u'-'):
         if word:
             result.append(word)
     return unicode(delim.join(result))
+
+def generate_taglist(text):
+    taglist = list(set(text.split(','))) # Converting to set and back removes duplicates
+    result = [slugify(tag) for tag in taglist]
+    return result

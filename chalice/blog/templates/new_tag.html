@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block title %}New Tag {% endblock %}
+{% block body %}
+<h1>New Tag</h1>
+<form method="POST" action="{{ url_for('blog.new_tag') }}">
+  <fieldset>
+    <ol>
+      <li>
+        <label for="title">Name:</label>
+        <input id="title" name="title" type="text" placeholder="Please write a name." required autofocus />
+      </li>
+    </ol>
+  </fieldset>
+  <fieldset>
+    <button id="submit" type="submit" name="submit">Submit</button>
+  </fieldset>
+</form>
+{% endblock %}

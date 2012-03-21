@@ -17,8 +17,10 @@ class Post(db.Model):
 
     # -- Relationships
     # Many to many - Post <-> Tag
-    tags = db.relationship('Tag', secondary='post_tags', backref=db.backref('posts', lazy='dynamic'))
+    _tags = db.relationship('Tag', secondary='post_tags', backref=db.backref('posts', lazy='dynamic'))
 
+
+    # -- Methods and properties
     def __init__(self, title, text):
         self.title = title
         self.text = text
@@ -35,6 +37,16 @@ class Post(db.Model):
         self._slug = slugify(unicode(title))
 
     @hybrid_property
+    def tags(self):
+        return self._tags
+
+    @tags.setter
+    def tags(self, taglist):
+        self._tags = []
+        for tag_name in taglist:
+            self._tags.append(Tag.get_or_create(tag_name))
+
+    @hybrid_property
     def slug(self):
         return self._slug
 
@@ -49,6 +61,15 @@ class Tag(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String(), unique = True, nullable = False)
 
+    # -- Classmethods
+    @classmethod
+    def get_or_create(cls, tagname):
+        tag = cls.query.filter(cls.name == tagname).first()
+        if not tag:
+            tag = cls(tagname)
+        return tag
+
+    # -- Methods and properties
     def __init__(self, name):
         self.name = name
 

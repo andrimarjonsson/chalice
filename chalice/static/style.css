@@ -1,10 +1,15 @@
 /* general style */
+body, form, fieldset, legend, ol, li
+{
+  margin:0;
+  padding:0;
+
+}
+
 body
 {
   font:18px/25px Palatino, 'Palatino Linotype', Georgia, serif;
   color:#222222;
-  margin:0;
-  padding:0;
 }
 
 a
@@ -303,4 +308,40 @@ ul.tagcloud li
     background-color: #CEE5F5; 
     padding: 0.5em;
     border: 1px solid #AACBE2;
+}
+
+/* forms */
+
+form fieldset
+{
+    border: none;
+}
+
+form label
+{
+    float: left;
+    width: 100px;
+}
+
+form ol li
+{
+    list-style: none;
+    padding: 5px 0px 10px;
+    margin-bottom: 2px;
+}
+
+form input:not([type=submit]), form textarea
+{
+    width: 400px;    
+}
+
+form textarea
+{
+    height: 200px;
+}
+
+form button
+{
+    display: block;
+    margin: auto;
 }
