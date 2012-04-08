@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template
 from flask import Markup
-import markdown
+from chalice.helpers import markup
 
 pages = Blueprint('pages', __name__, template_folder = 'templates')
 
@@ -8,6 +8,6 @@ pages = Blueprint('pages', __name__, template_folder = 'templates')
 def about():
     content = None
     with pages.open_resource('about.md') as f:
-        content = Markup(markdown.markdown(unicode(f.read(), 'UTF-8'), extensions = ['codehilite', 'html_tidy'], output_format = 'html5'))
+        content = Markup(markup(unicode(f.read(), "UTF-8")))
     return render_template('default_page.html', content = content, pagename = 'about me')
 

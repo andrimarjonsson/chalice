@@ -4,6 +4,7 @@ from chalice.blog import blog
 from chalice.pages import pages
 from chalice.auth import auth
 from chalice.extensions import db, app, lm
+from chalice.helpers import markup
 
 import default_config
 
@@ -17,6 +18,14 @@ def datetimeformat(datetime, timeago=True):
         return readable
     iso_format = datetime.strftime('%Y-%m-%dT%H:%M:%SZ')
     return Markup('<span class=timeago title="%s">%s</span>' % (iso_format, readable))
+
+@app.template_filter()
+def markitup(text):
+    return Markup(markup(text))
+
+@app.route('/markdown_preview', methods=['POST'])
+def preview():
+    return Markup(markup(request.values['data']))
 
 def init_app():
     app.config.from_object(default_config)

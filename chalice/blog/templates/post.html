@@ -3,7 +3,7 @@
 {% block body %}
 <h1 class="title">{{ post.title }}</h1>
 <p class="date">written {{ post.create_date|datetimeformat }}</p>
-{{ post.text }}
+{{ post.text|markitup }}
 <p class="tags">This entry was tagged
   {% set pipe = joiner(" and ") %}
   {% for tag in post.tags %} {{ pipe() }}

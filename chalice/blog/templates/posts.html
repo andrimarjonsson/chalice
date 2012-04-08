@@ -7,7 +7,7 @@
   <div class="detail">
     <h1><a href="{{ url_for('blog.show_post', slug=post.slug) }}">{{ post.title }}</a></h1>      
     <div class="summary">
-      {{ post.text }}
+      {{ post.text|markitup }}
     </div>
   </div>
 </div>

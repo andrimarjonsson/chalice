@@ -1,5 +1,6 @@
 import re
 import translitcodec
+import markdown
 
 _punct_re = re.compile(r'[\t !"#$%&\'()*\-/<=>?@\[\\\]^_`{|},.]+')
 
@@ -16,3 +17,6 @@ def generate_taglist(text):
     taglist = list(set(text.split(','))) # Converting to set and back removes duplicates
     result = [slugify(tag) for tag in taglist]
     return result
+
+def markup(text):
+    return markdown.markdown(text, extensions = ['codehilite', 'html_tidy'], output_format = 'html5')
