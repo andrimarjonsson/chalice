@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block title %}Edit Post {% endblock %}
+{% block body %}
+<h1>Edit Post</h1>
+<form method="POST" action="{{ url_for('blog.edit_post', post_id = post.id) }}">
+  <fieldset>
+    <ol>
+      <li>
+        <label for="title">Title:</label>
+        <input id="title" name="title" type="text" value="{{ post.title }}" required autofocus />
+      </li>
+      <li>
+        <label for="text">Text:</label>
+        <textarea name="text" id="markItUp">{{ post.text }}</textarea>
+      </li>
+      <li>
+        <label for="tags">Tags:</label>
+        <input id="tags" type="text" name="tags" value="{{ tags }}" />
+      </li>
+    </ol>
+  </fieldset>
+  <fieldset>
+    <button id="submit" type="submit" name="submit">Submit</button>
+  </fieldset>
+</form>
+{% endblock %}
