@@ -1,7 +1,7 @@
 from chalice.blog import blog
 from chalice.pages import pages
 from chalice.auth import auth
-from chalice.upload import upload
+#from chalice.upload import upload
 from chalice.extensions import db, app, lm
 from flask import Markup, request
 
@@ -24,7 +24,7 @@ def init_app():
     app.register_blueprint(pages)
     app.register_blueprint(blog)
     app.register_blueprint(auth)
-    app.register_blueprint(upload, url_prefix='/upload')
+#    app.register_blueprint(upload, url_prefix='/upload')
 
     db.init_app(app)
     lm.setup_app(app)
