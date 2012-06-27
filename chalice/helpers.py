@@ -19,4 +19,4 @@ def generate_taglist(text):
     return result
 
 def markup(text):
-    return markdown.markdown(text, extensions = ['codehilite', 'html_tidy'], output_format = 'html5')
+    return markdown.markdown(text, extensions = ['codehilite'], output_format = 'html5')
