@@ -9,7 +9,7 @@ import chalice.filters
 import chalice.errors
 import chalice.helpers
 
-import default_config
+import config
 
 __all__ = ['init_app']
 
@@ -19,7 +19,7 @@ def preview():
     return Markup(helpers.markup(request.values['data']))
 
 def init_app():
-    app.config.from_object(default_config)
+    app.config.from_object(config)
 
     app.register_blueprint(pages)
     app.register_blueprint(blog)

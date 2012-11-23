@@ -12,8 +12,11 @@
 *.[oa]
 *.py[co]
 
-#Python modules
+# Python modules
 MANIFEST
 dist/
 build/
 
+# Project specific
+config.py
+*.db
