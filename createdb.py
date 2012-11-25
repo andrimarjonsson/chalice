@@ -7,10 +7,7 @@ if __name__ == '__main__':
     app = init_app()
     with app.test_request_context():
         db.create_all()
-        post = Post( 'This is a title', 'The classic hello world here.')
-        post.tags = ['rant', 'programming']
-        db.session.add(post)
-        user = User('andrimar', 'testpass')
+        user = User(app.config['CHALICE_USER'], app.config['CHALICE_PASS'])
         db.session.add(user)
         db.session.commit()
-    print 'Initialized an empty db using the following connection string: %s' % app.config['SQLALCHEMY_DATABASE_URI']
+    print 'Initialized a db using the following connection string: %s' % app.config['SQLALCHEMY_DATABASE_URI']
