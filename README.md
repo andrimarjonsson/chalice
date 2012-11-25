@@ -10,11 +10,15 @@ My small blog and portfolio written in Python using Flask.
 * Markdown
 * translitcodec
 
-Best way to install these is via easy_install.
+Easiest way to install these is via [easy_install](http://pypi.python.org/pypi/setuptools) or [pip](http://pypi.python.org/pypi/pip).
 
 ## Getting started
 
-Open `chalice/default_config.py` and set your db connection string.
+1. Rename `chalice/default_config.py` to `chalice/config.py`
+2. Set your db connection string.
+3. Set username and password for the admin interface.
+4. Call `python createdb.py && python run.py`
+5. Point your browser to [http:://localhost:5000/](http:://localhost:5000/)
 
-Then call `python createdb.py && python run.py` and point your browser to [http:://localhost:5000/](http:://localhost:5000/)
-
+## License
+[BSD](http://opensource.org/licenses/BSD-2-Clause)
