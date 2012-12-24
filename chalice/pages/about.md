@@ -1,10 +1,11 @@
 # About Me #
-My name is Andri Mar and I'm a software developer most interested in embedded development, programming languages and games. I'm an active member and part of the board of [Hakkavélin](http://www.hakkavelin.is "Reykjavík Hackerspace") hackerspace in [Reykjavík](http://en.wikipedia.org/wiki/Reykjavík).
+My name is Andri Mar and I'm a software developer most interested in embedded development, programming languages and games.
 
-I got my B. Sc. degree in Computer Science from [Reykjavík University](http://ru.is) in 2007 and worked for [CCP Games hf.](http://ccpgames.com) for 4 and a half years before leaving in November 2011. Currently work for Sproing Interactive in Vienna, Austria.
+I got my degree in Computer Science from [Reykjavík University](http://ru.is) in 2007. Worked for [CCP Games hf.](http://ccpgames.com) for 4 and a half years. Currently work for [Sproing Media Interactive GmbH](http://www.sproing.at) in Vienna, Austria.
 
-My interesests include electronics, homebrewing beer and sports of all sorts.
+Interesests include electronics, homebrewing and sports of all sorts.
 
-If you want to contact me I'm usually available via [email](andri.m.jonsson@gmail.com) and on `#hakkavelin` IRC channel on freenode where I go by the name `andrimar`.
+If you want to contact me I'm usually on `#hakkavelin` IRC channel on freenode where I go by the name `andrimar` or on [metalab](http://metalab.at)'s jabber server under the same name.
 
-For a more detailed info on me, please read my CV/resumé available [here](http://andrimar.is/files/cv.pdf).
+For more detailed information, feel free read my CV available [here](http://andrimar.is/files/cv.pdf).
+
