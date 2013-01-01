@@ -24,8 +24,8 @@ class Post(db.Model):
     def __init__(self, title, text):
         self.title = title
         self.text = text
-        self.create_date = datetime.now()
-        self.edit_date = datetime.now()
+        self.create_date = datetime.utcnow()
+        self.edit_date = datetime.utcnow()
 
     @hybrid_property
     def title(self):
