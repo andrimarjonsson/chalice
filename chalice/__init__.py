@@ -16,7 +16,8 @@ __all__ = ['init_app']
 # -- TODO: Need to find a better spot for this.
 @app.route('/markdown_preview', methods=['POST'])
 def preview():
-    return Markup(helpers.markup(request.values['data']))
+    template = app.jinja_env.get_template("preview.html")
+    return template.render(text=request.values['data'])
 
 def init_app():
     app.config.from_object(config)
